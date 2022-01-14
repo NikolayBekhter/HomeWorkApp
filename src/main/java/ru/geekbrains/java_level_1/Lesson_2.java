@@ -11,15 +11,19 @@ public class Lesson_2 {
     }
 
     public static boolean LeapYearOrNot(int year) {
-        if(year % 400 == 0){
-            return true;
-        } else if(year % 100 == 0){
-            return false;
-        } else if(year % 4 == 0){
-            return true;
-        } else{
-            return false;
+        while (year != 0){
+            if (year % 400 == 0) {
+                return true;
+            } else if (year % 100 == 0) {
+                return false;
+            } else if (year % 4 == 0) {
+                return true;
+            } else {
+                return false;
+            }
         }
+        System.out.println("Вы ввели не корректный год");
+        return false;
     }
 
     public static boolean CheckingSum(int a, int b) {
