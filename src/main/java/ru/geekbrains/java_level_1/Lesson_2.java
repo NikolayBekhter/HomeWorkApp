@@ -3,38 +3,37 @@ package ru.geekbrains.java_level_1;
 public class Lesson_2 {
 
     public static void main(String[] args) {
-        System.out.println(LeapYearOrNot(2022));
-        System.out.println(CheckingSum(7, 13));
-        PositiveOrNegativeCase1(5);
-        System.out.println(PositiveOrNegativeCase2(-5));
-        PrintLine("Java", 3);
+        System.out.println(leapYearOrNot(2022));
+        System.out.println(checkingSum(7, 13));
+        positiveOrNegativeCase1(5);
+        System.out.println(positiveOrNegativeCase2(-5));
+        printLine("Java", 3);
     }
 
-    public static boolean LeapYearOrNot(int year) {
-        while (year != 0){
-            if (year % 400 == 0) {
-                return true;
-            } else if (year % 100 == 0) {
-                return false;
-            } else if (year % 4 == 0) {
-                return true;
-            } else {
-                return false;
-            }
+    public static boolean leapYearOrNot(int year) {
+        boolean result = false;
+        if (year == 0) {
+            System.out.println("Вы ввели не корректный год");
+            result = false;
+        } else if (year % 400 == 0) {
+            result = true;
+        } else if (year % 100 == 0) {
+            result = false;
+        } else if (year % 4 == 0) {
+            result = true;
         }
-        System.out.println("Вы ввели не корректный год");
+        return result;
+    }
+
+    public static boolean checkingSum(int a, int b) {
+        boolean check = false;
+        if (a + b >= 10 && a + b <= 20) {
+            check = true;
+        }
         return false;
     }
 
-    public static boolean CheckingSum(int a, int b) {
-        if (a + b >= 10 && a + b <= 20) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static void PositiveOrNegativeCase1(int a) {
+    public static void positiveOrNegativeCase1(int a) {
         if (a >= 0) {
             System.out.println("Число " + a + " положительное");
         } else {
@@ -42,15 +41,15 @@ public class Lesson_2 {
         }
     }
 
-    public static boolean PositiveOrNegativeCase2(int a) {
+    public static boolean positiveOrNegativeCase2(int a) {
+        boolean result = true;
         if (a >= 0) {
-            return false;
-        } else {
-            return true;
+            result = false;
         }
+        return result;
     }
 
-    public static void PrintLine(String str, int a) {
+    public static void printLine(String str, int a) {
         if (a > 0) {
             for (int i = 0; i < a; i++) {
                 System.out.println(str);
