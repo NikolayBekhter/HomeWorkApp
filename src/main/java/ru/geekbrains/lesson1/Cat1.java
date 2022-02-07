@@ -1,12 +1,12 @@
 package ru.geekbrains.lesson1;
 
-public class Cat {
+public class Cat1 {
 
     private String name;
     private int appetite;
     private boolean satiety = false;
 
-    public Cat(String name, int appetite) {
+    public Cat1(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
     }
